@@ -1,3 +1,12 @@
+// below is 'books' from boilerplate
+// a place to browse beers on our site
+
+// navbar
+// beer names
+// stock images
+// admin ratings
+// average user ratings
+
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";

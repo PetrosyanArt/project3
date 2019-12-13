@@ -1,3 +1,6 @@
+// below is the 'login' boilerplate
+
+
 import React, { Component } from "react";
 
 import API from "../utils/API";

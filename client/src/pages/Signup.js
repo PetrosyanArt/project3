@@ -1,3 +1,14 @@
+// below is the 'signup' boilerplate
+
+// what we need in ours:
+// email
+// password
+// username
+// age/birthday
+// location (optional)
+// favorite beer type (optional)
+// image/avatar
+
 import React, { Component } from "react";
 
 import API from "../utils/API";

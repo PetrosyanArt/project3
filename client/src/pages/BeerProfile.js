@@ -1,3 +1,17 @@
+// below is 'detail' from boilerplate
+// this will be a profile page for a single beer
+
+// navbar
+// beer name
+// stock image
+// admin rating
+// average user rating
+// admin video thumbnail
+// description from API
+// user ratings below
+// submit new review button
+
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
