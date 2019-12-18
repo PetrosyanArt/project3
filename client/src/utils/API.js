@@ -1,38 +1,39 @@
 import axios from "axios";
 
-const xhrHeader = {
-  headers: {
-    xhrFields: {
-      withCredentials: true
-    }
-  }
-};
-
+// The getVision method retrieves label annotations from the server
+// It accepts a base64 image or url to search the google vision api
 export default {
-  // Gets all books
-  getBooks: function () {
-    return axios.get("/api/books");
+  postVision: (imageData) => {
+    return axios.post("/api/vision", imageData);
   },
-  // Gets the book with the given id
-  getBook: function (id) {
-    return axios.get("/api/books/" + id);
+  postBeerID: (imageResults) => {
+    return axios.post("/api/identifybeer", imageResults);
   },
-  // Deletes the book with the given id
-  deleteBook: function (id) {
-    return axios.delete("/api/books/" + id);
+  postBreweryID: (nameOfBrewery) => {
+    return axios.post("/api/identifybrewery", nameOfBrewery);
   },
-  // Saves a book to the database
-  saveBook: function (bookData) {
-    return axios.post("/api/books", bookData);
+  postUser: (googleToken) => {
+    return axios.post("/api/user", googleToken)
   },
-  loginUser: function (user) {
-    return axios.post("/api/user/", user, xhrHeader)
+  postRateBeer: (visionBeerName) => {
+    return axios.post("/api/ratebeer", visionBeerName);
   },
-  signup: function (user) {
-    return axios.post("/api/user/signup", user, xhrHeader)
+  getUser: (userId) => {
+    return axios.get("/api/user/" + userId);
   },
-  authenticateUser: function () {
-    return axios.post("/api/user/authenticate/", xhrHeader)
+  getHistory: (userId) => {
+    return axios.get("/api/beers/" + userId);
+  },
+  getReviews: (userId) => {
+    return axios.get("/api/reviews/" + userId);
+  },
+  postBeerReview: (beerReviewData) => {
+    return axios.post("/api/reviews", beerReviewData);
+  },
+  updateBeerReview: (beerReviewData) => {
+    return axios.put("/api/reviews", beerReviewData);
+  },
+  postUsersBeers: (userId, beerData) => {
+    return axios.post("/api/beers/" + userId, beerData);
   }
-
 };
