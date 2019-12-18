@@ -1,8 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import Books from "./pages/Books";
+import Beers from "./pages/Beers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import AdminReviews from "./AdminReviews";
+import User from "./AdminReviews";
+import AdminReviews from "./User";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import {/* getCookie, */ authenticateUser} from "./utils/handleSessions";
@@ -43,7 +46,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render={(props) => <Login {...props} authenticate={this.authenticate} authenticated={this.state.authenticated} />} />
           <Route exact path="/signup"  render={(props) => <Signup {...props} authenticate={this.authenticate} authenticated={this.state.authenticated} />} />
-          <this.PrivateRoute exact path="/books" component={Books} />
+          <Route exact path="/adminreviews"  render={(props) => <AdminReviews {...props} authenticate={this.authenticate} authenticated={this.state.authenticated} />} />
+          <this.PrivateRoute exact path="/user" component={User} />
+          <this.PrivateRoute exact path="/beers" component={Beers} />
           <Route component={NoMatch} />
         </Switch>
       </div>
