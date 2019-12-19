@@ -30,6 +30,7 @@
     "js-cookie": "^2.2.1",
     "mongoose": "^5.3.16",
     "morgan": "^1.9.1",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "eslint": "5.12.0"
   }
 }

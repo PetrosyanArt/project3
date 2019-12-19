@@ -1,2 +1,1 @@
-# project3
-Columbia Bootcamp Final Project
+# final-project
